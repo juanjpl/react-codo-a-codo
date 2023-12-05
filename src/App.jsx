@@ -1,5 +1,6 @@
 import {Navbar} from "./components/Navbar/Navbar";
 import "./App.css";
+import { Hooks } from "./Hooks/Hooks";
 
 const App = () => {
 
@@ -8,7 +9,7 @@ const App = () => {
   return (
     <>
       <Navbar menu={menu} />
-    
+      <Hooks/>
     </>
   );
 };

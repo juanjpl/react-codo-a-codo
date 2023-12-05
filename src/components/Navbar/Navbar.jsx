@@ -1,4 +1,4 @@
-import { NavbarLayout } from "../../Layouts/NavbarLayout";
+import { NavbarLayout } from "./Layouts/NavbarLayout";
 import { NavbarItems, NavbarLogo, NavbarSearch } from "./index";
 
 
