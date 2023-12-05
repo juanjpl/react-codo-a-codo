@@ -8,7 +8,8 @@ export const  NavbarLayout=({children})=> {
         color:'white',
         display:'flex',
         width:'100vw',
-        justifyContent:'space-between'
+        justifyContent:'space-between',
+        alignItems : 'center'
     }
   return (
 
