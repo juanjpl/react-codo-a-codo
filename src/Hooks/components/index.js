@@ -1,2 +1,3 @@
 
-export * from './Hooks'
+export * from './Hooks';
+export * from './HooksPrincipales';

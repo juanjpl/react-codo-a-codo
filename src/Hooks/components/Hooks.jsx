@@ -1,43 +1,37 @@
 
-import { useEffect, useState} from "react";
+import { HooksPrincipales } from "./HooksPrincipales";
+import { PropTypesComponents } from "./methods";
+
+
+const style = {
+    height : '80vh',
+    display: 'flex',
+    placeContent: 'center',
+    placeItems: 'center',
+    color:'black'
+}
 
 export const Hooks = ()=>{
 
-    const [count, setCount] = useState(0);
-    const  [puntitos, setPuntitos] = useState('.')
-
-    const style = {
-        height : '80vh',
-        display: 'flex',
-        placeContent: 'center',
-        placeItems: 'center',
-        color:'black'
-    }
-
-    const countClickHandler =()=>{
-        setCount(count+1);
-    }
+ 
+    const proptypes = () => 'Funcion';
 
 
-    //UseEffect
-
-    useEffect(()=>{
-
-        setTimeout(() => {
-            setPuntitos(puntitos + '.')
-        }, 1000);
-
-        return()=>{
-            puntitos === '.....' && setPuntitos('.')
-        }
-    },[puntitos])
     return(
         <div style={style} >
-            <button
-            onClick={countClickHandler} >
-                +
-            </button>
-        <h2>{count + puntitos} </h2>
+            {
+//<HooksPrincipales/>
+            }
+
+           
+           <PropTypesComponents
+           name='Juan'
+           age={50}
+           dev={true}
+           array={['primer','segunda']}
+           objeto={{a:1}}
+           funcion={proptypes}
+           />
         </div>
     )
 }
