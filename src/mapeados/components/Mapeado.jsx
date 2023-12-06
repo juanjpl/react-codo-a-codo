@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState , useEffect } from "react"
 import { centerStyle, oddStyle } from "../../Hooks/styles"
 
 
@@ -25,6 +25,7 @@ export const Mapeado = () =>{
         }
 
         traerJSON();
+        console.log(data)
 
     }, [loading])
     
@@ -36,14 +37,16 @@ export const Mapeado = () =>{
                 ?
                 <div>Cargando....</div>
                 :
-                data.map = ((item,index )=> <Item   key={index} item={item}/> )
+                data.map((item,index )=> <Item   key={index} item={item}/> )
             }
         </div>
     )
 }
 
 
-const Item = ({item})=>{<div>
+const Item = ({item})=>
+
+<div>
     <h4>{item.nombre} </h4>
     <h5>{item.edad} </h5>
-</div>}
+</div>

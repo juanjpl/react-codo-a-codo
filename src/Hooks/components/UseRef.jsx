@@ -21,7 +21,7 @@ export const UseRef = () => {
   };
 
   useEffect(()=>{
-    divRef.current.style.transform =`translateX(${posicion})`
+    divRef.current.style.transform =`translateX(${posicion}px)`
   },[posicion])
 
   return (

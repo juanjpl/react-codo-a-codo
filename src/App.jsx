@@ -2,7 +2,7 @@ import {Navbar} from "./components/Navbar/Navbar";
 import "./App.css";
 import { Hooks } from "./Hooks/components/Hooks";
 import { Rutas } from "./Global/routes/Rutas";
-import { Mapedado } from "./mapeados/components/Mapeado";
+import { Mapeado } from "./mapeados/components/Mapeado";
 
 const App = () => {
 
@@ -20,7 +20,7 @@ const App = () => {
     <>
       <Navbar menu={menu} />
       <Rutas/>
-      <Mapedado/>
+      <Mapeado/>
     </>
   );
 };
