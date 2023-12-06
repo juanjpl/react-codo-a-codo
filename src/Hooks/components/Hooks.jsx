@@ -1,6 +1,8 @@
 
 import { HooksPrincipales } from "./HooksPrincipales";
 import { PropTypesComponents } from "./methods";
+import { UseEffect } from "./UseEffect";
+import { UseRef } from "./UseRef";
 import { UseState } from "./UseState";
 
 
@@ -38,6 +40,8 @@ export const Hooks = ()=>{
            funcion={proptypes}
            />
            <UseState/>
+           <UseEffect/>
+           <UseRef/>
         </div>
     )
 }
