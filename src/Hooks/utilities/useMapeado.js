@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import { evenStyle, errorStyle } from "../styles";
 import { capital } from "../utilities";
 
-export const useMapeado = (url) =>{
+
+const useMapeado = () =>{
 
 
 const [coins, setCoins] = useState({});
+const [error, setError] = useState([false, "No hay errores"]);
 const [loading, setLoading] = useState(true);
 const [crypto, setCrypto] = useState("bitcoin");
 
@@ -17,12 +19,6 @@ const url_currencies_codes = () =>
 const url_currencies_list = () =>
   `https://api.coingecko.com/api/v3/coins/list`;
 
-const btnHandleClick = (cryptoCurrency) => {
-  if (cryptoCurrency === crypto) return;
-
-  setCrypto(cryptoCurrency);
-  setLoading(true);
-};
 
 useEffect(() => {
   const getPriceApi = async () => {
@@ -33,24 +29,18 @@ useEffect(() => {
         //console.log(respuesta);
         //console.log(data);
 
-        if (!Reflect.has(data, crypto)) {
-          setError([true, "No se pudo obtener la cryptomoneda solicitada."]);
-        }
-
         setCoins({ ...data[crypto] });
       }
     } catch (e) {
-      setError([true, "No se pudo obtener la criptomonea solicitada."]);
+      alert("No se pudo obtener la criptomonea solicitada.");
     } finally {
       setLoading(false);
     }
   };
 
   setTimeout(() => getPriceApi(), 2000);
-
-
+  
 }, [loading]);
 
 return { data}
-
 }

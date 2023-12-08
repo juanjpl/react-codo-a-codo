@@ -1,9 +1,16 @@
 
 import { HooksPrincipales } from "./HooksPrincipales";
-import { PropTypesComponents } from "./methods";
+import {OnClickCapture} from './methods/OnClickCapture'
+import { Memo, PropTypesComponents } from "./methods";
 import { UseEffect } from "./UseEffect";
 import { UseRef } from "./UseRef";
 import { UseState } from "./UseState";
+import { UseLayoutEffect } from "./UseLayoutEffect";
+import { UseInsertionEffect } from "./UseInsertionEffect";
+import { UseMemo } from "./UseMemo";
+import { UseCallback } from "./UseCallback";
+import { ForwardRef } from "./methods/Memo/ForwardRef";
+
 
 
 const style = {
@@ -39,9 +46,17 @@ export const Hooks = ()=>{
            objeto={{a:1}}
            funcion={proptypes}
            />
+            <OnClickCapture/>
            <UseState/>
            <UseEffect/>
            <UseRef/>
+           <UseLayoutEffect />
+           <UseInsertionEffect/>
+           <Memo/>
+           <UseMemo/>
+           <UseCallback/>
+           <ForwardRef/>
+          
         </div>
     )
 }
