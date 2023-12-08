@@ -10,6 +10,9 @@ import { UseInsertionEffect } from "./UseInsertionEffect";
 import { UseMemo } from "./UseMemo";
 import { UseCallback } from "./UseCallback";
 import { ForwardRef } from "./methods/Memo/ForwardRef";
+import { useContext } from "react";
+import { HooksContext } from "../Context/HooksContext";
+import { centerStyle, evenStyle, oddStyle } from "../styles";
 
 
 
@@ -56,7 +59,21 @@ export const Hooks = ()=>{
            <UseMemo/>
            <UseCallback/>
            <ForwardRef/>
+
+
+           <Context/>
           
         </div>
     )
+}
+
+const Context = ()=>{
+    
+
+    const {value , changeValue} = useContext(HooksContext)
+    
+    return <div className={oddStyle + centerStyle} >
+          <h3>{value}</h3>
+           <button className="btn btn-primary" onClick={changeValue}>Cambiar valor</button>
+    </div>
 }

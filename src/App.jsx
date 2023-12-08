@@ -1,8 +1,9 @@
 import {Navbar} from "./components/Navbar/Navbar";
 import "./App.css";
-import { Hooks } from "./Hooks/components/Hooks";
+import { HooksProvider } from "./Hooks/components/Hooks";
 import { Rutas } from "./Global/routes/Rutas";
 import { Mapeado } from "./mapeados/components/Mapeado";
+import { HooksProvider } from "./Hooks/Context/HooksContext";
 
 const App = () => {
 
@@ -17,11 +18,11 @@ const App = () => {
   ]
 
   return (
-    <>
+    <HooksProvider>
       <Navbar menu={menu} />
       <Rutas/>
       <Mapeado/>
-    </>
+    </HooksProvider>
   );
 };
 
