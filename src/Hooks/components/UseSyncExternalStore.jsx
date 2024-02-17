@@ -13,7 +13,7 @@ const snapShot = ()=> window.scrollY
 export const UseSyncExternalStore = () => {
 
 
-const heightFormTop = useSyncExternalStore(funcionListener , snapShot);
+const heightFromTop = useSyncExternalStore(funcionListener , snapShot);
 
   return (
     <div className={evenStyle + centerStyle} >
