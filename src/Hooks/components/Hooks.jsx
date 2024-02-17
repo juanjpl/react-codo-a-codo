@@ -13,6 +13,10 @@ import { ForwardRef } from "./methods/Memo/ForwardRef";
 import { useContext } from "react";
 import { HooksContext } from "../Context/HooksContext";
 import { centerStyle, evenStyle, oddStyle } from "../styles";
+import { UseReducer } from "./UseReducer";
+import { UseDeferredValue } from "./UseDeferredValue";
+import { UseId } from "./UseId";
+import { UseSyncExternalStore } from "./UseSyncExternalStore";
 
 
 
@@ -59,6 +63,11 @@ export const Hooks = ()=>{
            <UseMemo/>
            <UseCallback/>
            <ForwardRef/>
+           <UseReducer/>
+           {/* <UseTransition/> */}
+           <UseDeferredValue/>  
+           <UseId/>
+           <UseSyncExternalStore/>
 
 
            <Context/>
