@@ -1,13 +1,17 @@
-import {Navbar} from "./components/Navbar";
+
 import "./App.css";
+import { Componente } from "./components/Componente";
+import { Cripto } from "./components/Cripto";
 
 const App = () => {
 
-  const menu = ['Inicio','Contacto','Productos','Nosotros']
+ 
 
   return (
     <>
-      <Navbar menu={menu} />
+
+    {/*<Componente/>*/}
+    <Cripto/>
     
     </>
   );
