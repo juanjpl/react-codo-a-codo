@@ -3,15 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { criptoSelector } from "../redux/selectors/criptoSelector";
 import { CriptoLayout } from "../Layouts/criptoLayout";
 import { getStateServiceThunk } from "../redux/middleware/criptoMiddleware";
+import { setCrypt } from "../redux/reducers/criptoReducer";
 
 export const Cripto = () => {
   const { crypt, loading, state, price } = useSelector(criptoSelector);
   const dispatch = useDispatch();
-  console.log(state)
+  //console.log(state)
 
   useEffect(() => {
     dispatch(getStateServiceThunk());
   }, []);
+
+  const hadleChange = e =>{
+    dispatch(setCrypt(e.target.value))
+  }
 
   return (
     <CriptoLayout>
@@ -31,6 +36,12 @@ export const Cripto = () => {
           }
         </h4>
       
+      </div>
+
+      <div className="bg-secondary-subtle p-4 rounded">
+        <h3 className="bg-primary opacity-50 rounded p-1" >Ars:{price.ars} </h3>
+        <h3 className="bg-success opacity-50 p-1 rounded">Usd:{price.usd} </h3>
+        <h4></h4>
       </div>
     </CriptoLayout>
   );
