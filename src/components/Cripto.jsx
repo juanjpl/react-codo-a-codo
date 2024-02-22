@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { criptoSelector } from "../redux/selectors/criptoSelector";
 import { CriptoLayout } from "../Layouts/criptoLayout";
-import { getStateServiceThunk } from "../redux/middleware/criptoMiddleware";
+import {getStateServiceThunk } from "../redux/middleware/criptoMiddleware";
+import { getDataThunk } from "../redux/middleware/criptoMiddleware";
 import { setCrypt } from "../redux/reducers/criptoReducer";
 
 export const Cripto = () => {
@@ -10,14 +11,21 @@ export const Cripto = () => {
   const dispatch = useDispatch();
   //console.log(state)
 
-  useEffect(() => {
-    dispatch(getStateServiceThunk());
-  }, []);
 
-  const hadleChange = e =>{
+
+  const handleChange = e =>{
     dispatch(setCrypt(e.target.value))
   }
 
+  const handleClick =()=>{ 
+    dispatch(startLoading())
+    dispatch(getDataThunk())
+    //console.log(crypt,state,price)
+  }
+
+  useEffect(() => {
+    dispatch(getStateServiceThunk());
+  }, []);
   return (
     <CriptoLayout>
       <h1>Criptos </h1>
@@ -26,6 +34,7 @@ export const Cripto = () => {
       <div className="d-flex gap-2 justify-content-center">
         <h4>Estado del servicio:</h4>
         <h4>
+       
      
           {
           state 
@@ -34,6 +43,7 @@ export const Cripto = () => {
           :   <div className="badge bg-danger">Error de conexion</div>
           :   <div className="badge bg-warning text-dark">verificando.....</div>
           }
+
         </h4>
       
       </div>
@@ -43,6 +53,27 @@ export const Cripto = () => {
         <h3 className="bg-success opacity-50 p-1 rounded">Usd:{price.usd} </h3>
         <h4></h4>
       </div>
+
+      <h5>
+        Loading:
+        <b className= {
+            loading
+            ? 'badge text-bg-warning'
+            : 'badge text-bg-success'
+        }>
+                {loading ? 'in progress' : 'finish'}
+        </b>
+      </h5>
+
+      <input type="text" 
+              className="w-100 form-control text-center bg-light"
+              value={crypt}
+              onChange={handleChange}
+      />
+
+      <button onClick={handleClick}
+              className="btn btn-primary"
+      >Buscar</button>
     </CriptoLayout>
   );
 };

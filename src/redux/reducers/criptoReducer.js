@@ -19,7 +19,7 @@ const reducers = {
     getPrice:criptoGetPrice
 }
 
-export const slice = createSlice({name, initialState, reducers})
+const slice = createSlice({name, initialState, reducers})
 export const{setCrypt, startLoading, endLoading, getPrice, stateService} = slice.actions
 
 export const criptoReducer= slice.reducer
