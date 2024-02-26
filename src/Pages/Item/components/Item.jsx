@@ -5,6 +5,7 @@ import { useFetch } from '../../../Global/hooks/useFetch';
 import { Box, CircularProgress, Grid, Typography } from '@mui/material';
 import {AlertDialog} from '../../../Global/components/AlertDialog';
 import { ImgMediaCard } from './ImgMediaCard';
+import { CartWidget } from '../../../Cart/components/CartWidget';
 
 
 const url = (id) => `https://fakestoreapi.com/products/${id}`;
@@ -97,6 +98,7 @@ const Card = ({data})=>{
             </Grid>
             <Grid item sx={{margin:'0 auto' , textAlign:'center'}} >
                   <Typography variant='h5'>${price} </Typography>
+                  <CartWidget data={data}/>
             </Grid>
         </Grid>
       </Grid>
