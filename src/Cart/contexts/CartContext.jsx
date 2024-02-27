@@ -36,7 +36,7 @@ export const CartProvider = ({children}) =>{
 
         
     }
-    console.log(cart , {total})
+    //console.log(cart , {total})
     const delItem =(id)=>{
         const item = cart.find(item => item.id === id)
         setTotal(total - item.qty)

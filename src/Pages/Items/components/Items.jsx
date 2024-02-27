@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { Box } from "@mui/system";
 
 const url = "https://fakestoreapi.com/products";
+//const ruta ='/src/assets/data/products.json'
 
 const card = {
   width: "210px",
@@ -24,7 +25,7 @@ const box = {
 export const Items = () => {
   const { data, loading } = useFetch(url);
   console.log(data);
-  console.log(loading);
+  //console.log(loading);
 
   return (
     <ItemsContainer>
@@ -48,7 +49,7 @@ const ItemsContainer = ({ children }) => {
 
 const ItemsLoading = () => {
   return (
-    <ImageList cols={3}>
+    <ImageList cols={4}>
       {Array.from(new Array(9)).map((_, index) => {
         return <ItemLoading key={index} />;
       })}
@@ -72,7 +73,7 @@ const ItemLoading = () => {
 
 const ItemsList = ({ data }) => {
   return (
-    <ImageList cols={3} sx={box}>
+    <ImageList cols={4} sx={box}>
       {data.map((item) => {
         return (
           <ItemList

@@ -32,7 +32,7 @@ export const NavbarDrawer =() => {
         {navbarData.map((section) => (
           <ListItem key={section.name} disablePadding>
             <ListItemButton>
-            <Link to={section.link} style={{textDecoration:'none' , color:'white'}}>
+            <Link to={section.link} style={{textDecoration:'none' }}>
             <ListItemText primary={section.name} />
             </Link>
            
